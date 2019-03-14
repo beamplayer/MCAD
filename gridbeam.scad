@@ -40,7 +40,6 @@ beam_wall_thickness = inch * 1/8;
 beam_shelf_thickness = inch * 1/4;
 
 module zBeam(segments) {
-if (mode == "model") {
 	difference() {
 		cube([beam_width, beam_width, beam_width * segments]);
 		for(i = [0 : segments - 1]) {
@@ -57,136 +56,15 @@ if (mode == "model") {
 		cube([beam_width - beam_wall_thickness * 2, beam_width - beam_wall_thickness * 2, beam_width * segments + 2]);
 	}
 }
-}
-
-if (mode == "dxf") {
-
-}
-}
 
 module xBeam(segments) {
-if (mode == "model") {
 	translate([0,0,beam_width])
 	rotate([0,90,0])
 	zBeam(segments);
 }
 
-if (mode == "dxf") {
-
-}
-}
-
 module yBeam(segments) {
-if (mode == "model") {
 	translate([0,0,beam_width])
 	rotate([-90,0,0])
 	zBeam(segments);
-}
-
-if (mode == "dxf") {
-
-}
-}
-
-module zBolt(segments) {
-if (mode == "model") {
-
-}
-
-if (mode == "dxf") {
-
-}
-}
-
-module xBolt(segments) {
-if (mode == "model") {
-}
-
-if (mode == "dxf") {
-
-}
-}
-
-module yBolt(segments) {
-if (mode == "model") {
-}
-
-if (mode == "dxf") {
-
-}
-}
-
-module translateBeam(v) {
-	for (i = [0 : $children - 1]) {
-		translate(v * beam_width) child(i);
-	}
-}
-
-module topShelf(width, depth, corners) {
-if (mode == "model") {
-	difference() {
-		cube([width * beam_width, depth * beam_width, beam_shelf_thickness]);
-
-		if (corners == 1) {
-		translate([-1,  -1,  -1])
-		cube([beam_width + 2, beam_width + 2, beam_shelf_thickness + 2]);
-		translate([-1, (depth - 1) * beam_width, -1])
-		cube([beam_width + 2, beam_width + 2, beam_shelf_thickness + 2]);
-		translate([(width - 1) * beam_width, -1, -1])
-		cube([beam_width + 2, beam_width + 2, beam_shelf_thickness + 2]);
-		translate([(width - 1) * beam_width, (depth - 1) * beam_width, -1])
-		cube([beam_width + 2, beam_width + 2, beam_shelf_thickness + 2]);
-		}
-	}
-}
-
-if (mode == "dxf") {
-
-}
-}
-
-module bottomShelf(width, depth, corners) {
-if (mode == "model") {
-	translate([0,0,-beam_shelf_thickness])
-	topShelf(width, depth, corners);
-}
-
-if (mode == "dxf") {
-
-}
-}
-
-module  backBoard(width, height, corners) {
-if (mode == "model") {
-	translate([beam_width, 0, 0])
-	difference() {
-		cube([beam_shelf_thickness, width * beam_width, height * beam_width]);
-
-		if (corners == 1) {
-		translate([-1,  -1,  -1])
-		cube([beam_shelf_thickness + 2, beam_width + 2, beam_width + 2]);
-		translate([-1, -1, (height - 1) * beam_width])
-		cube([beam_shelf_thickness + 2, beam_width + 2, beam_width + 2]);
-		translate([-1, (width - 1) * beam_width, -1])
-		cube([beam_shelf_thickness + 2, beam_width + 2, beam_width + 2]);
-		translate([-1, (width - 1) * beam_width, (height - 1) * beam_width])
-		cube([beam_shelf_thickness + 2, beam_width + 2, beam_width + 2]);
-		}
-	}
-}
-
-if (mode == "dxf") {
-
-}
-}
-
-module frontBoard(width, height, corners) {
-if (mode == "model") {
-	translate([-beam_width - beam_shelf_thickness, 0, 0])
-	backBoard(width, height, corners);
-}
-
-if (mode == "dxf") {
-
-}
 }
