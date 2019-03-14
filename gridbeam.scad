@@ -7,7 +7,7 @@
 
 // To Do:
 // integrate option to choose between imperial and metric gridbeam
-// integrate option to set beam width
+// integrate option to set beam width (to 1, 1.5, or 2 inch if imperial, or 25, 40 or 50 mm if metric)
 // integrate option to set length (in feet or meter, depending on whether imperial or metric gridbeam ); do this
 // by having the script calculate out the required segments by this method: entered length / entered beam_width = number_of_segments
 // A command to draw a horizontal gridbeam with 1 inch width and 4,5 feet length gridbeam should become: xBeam imperial 1 4,5
@@ -21,6 +21,14 @@
 // yBeam(segments) - create a horizontal gridbeam strut along the Y axis
 
 // To draw a bolt in the gridbeam, use the nuts_and_bolts.scad script or metric_fastners.scad script
+// Use following sizes for bolts on imperial gridbeams:
+// 11/32 inch bolt for 1 inch width gridbeam
+// 5/16 inch bolt for 1,5 inch width gridbeam
+// 3/8 inch bolt for 2 inch width gridbeam
+// Use following sizes for bolts on metric gridbeams:
+// 6 mm bolt for 25 mm width gridbeam
+// 9 mm bolt for 40 mm width gridbeam
+// 12 mm bolt for 50 mm width gridbeam
 
 include <units.scad>
 
