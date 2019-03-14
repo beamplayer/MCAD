@@ -19,19 +19,8 @@
 // zBeam(segments) - create a vertical gridbeam strut 'segments' long
 // xBeam(segments) - create a horizontal gridbeam strut along the X axis
 // yBeam(segments) - create a horizontal gridbeam strut along the Y axis
-// zBolt(segments) - create a bolt 'segments' in length
-// xBolt(segments)
-// yBolt(segments)
-// topShelf(width, depth, corners) - create a shelf suitable for use in gridbeam structures width and depth in 'segments', corners == 1 notches corners
-// bottomShelf(width, depth, corners) - like topShelf, but aligns shelf to underside of beams
-// backBoard(width, height, corners) - create a backing board suitable for use in gridbeam structures width and height in 'segments', corners == 1 notches corners
-// frontBoard(width, height, corners) - like backBoard, but aligns board to front side of beams
-// translateBeam([x, y, z]) - translate gridbeam struts or shelves in X, Y, or Z axes in units 'segments'
 
-// To render the DXF file from the command line:
-// openscad -x connector.dxf -D'mode="dxf"' connector.scad
-mode = "model";
-//mode = "dxf";
+// To draw a bolt in the gridbeam, use the nuts_and_bolts.scad script or metric_fastners.scad script
 
 include <units.scad>
 
