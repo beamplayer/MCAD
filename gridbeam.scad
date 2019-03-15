@@ -13,7 +13,7 @@
 // integrate option to set length (in feet or meter, depending on whether imperial or metric gridbeam ); do this
 // by having the script calculate out the required segments by this method: entered length / entered beam_width = number_of_segments
 // A command to draw a wooden horizontal gridbeam with 1 inch width and 4,5 feet length gridbeam should become: xBeam imperial wood 1 4,5
-// or hence: xBeam (gridbeam_units_system)(gridbeam_type)(gridbeam_width)(gridbeam_length)(xyz-coordinates to place beam)
+// or hence: xBeam (gridbeam_units_system)(gridbeam_type)(gridbeam_width)(gridbeam_length)
 // ------
 
 // A segment starts from 'the middle between 2 holes + the whole itself + the next middle between 2 holes' 
